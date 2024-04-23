@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <h1 align="center">Project Moribus</h1>
+    <h2>Таблица Лидеров</h2>
+    <br>
+    <ol class="list-group list-group-numbered">
+        {% for user in users %}
+            <li class="list-group-item">Игрок: {{ user[0] }} Уровень: {{ user[1] }} Опыт: {{ user[2] }}</li>
+        {% endfor %}
+    </ol>
+    <br>
+    {% if current_user.is_authenticated %}
+        <h2>Информация о вас  {{ current_user.name }}</h2>
+        <a> Ваш Уровень: {{ current_user.level }} <br>
+            Накопленный Опыт: {{ current_user.xp }} <br>
+            Осталось Энергии: {{ current_user.energy }} <br>
+        </a>
+    {% endif %}
+{% endblock %}
+{% block body_navbar %}
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href=""> <pre>Project Moribus     {{ current_user.name }}</pre> </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/">Домашняя Страница</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/inventory">Инвентарь</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/support">Обратная Связь</a>
+                    </li>
+                    <br>
+                    <li class="nav-item">
+                        <a class="btn btn-outline-secondary" href="/logout">Выйти</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+{% endblock %}
