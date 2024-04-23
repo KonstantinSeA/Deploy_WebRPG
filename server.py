@@ -11,13 +11,11 @@ import time
 import os
 from flask_login import LoginManager, login_user, login_required, logout_user
 from flask_login import current_user
-from flask_restful import reqparse, abort, Api, Resource
 from other_py_files.some_function import equip, shedule_settings
 from other_py_files.game import game_request, get_answer, after_await
 
 
 app = Flask(__name__)
-api = Api(app)
 app.config['SECRET_KEY'] = 'yandexlyceum_secret_key'
 app.config['PERMANENT_SESSION_LIFETIME'] = dt.timedelta(days=365)
 login_manager = LoginManager()
