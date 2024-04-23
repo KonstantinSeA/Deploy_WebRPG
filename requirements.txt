@@ -1,5 +1,5 @@
 SQLAlchemy==1.4.52
 werkzeug==1.0.1
 wtforms==2.3.3
-schedule==1.2.1
+schedule==0.6.0
 flask==2.2.5
