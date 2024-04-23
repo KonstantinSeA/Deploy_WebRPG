@@ -1,4 +1,4 @@
-SQLAlchemy==2.0.29
+SQLAlchemy==1.4.52
 werkzeug==2.2.3
 wtforms==3.0.1
 schedule==1.2.1
