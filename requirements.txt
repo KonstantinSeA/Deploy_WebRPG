@@ -3,3 +3,4 @@ werkzeug==2.2.2
 wtforms==2.3.3
 schedule==0.6.0
 flask==2.2.5
+flask_login=0.6.3
